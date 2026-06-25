@@ -1,7 +1,8 @@
-site_name: My MkDocs Material Documentation
+site_name: RIBLL 2026
 site_url: https://sitename.example
 theme:
   name: material
+  language: zh
   palette:
     # Light Mode
     - scheme: default
@@ -18,11 +19,15 @@ theme:
       primary: green
       accent: deep purple
   font:
-    text: Merriweather Sans
+    text: "Noto Sans SC, Merriweather Sans"
     code: Fira Code
 
   icon:
-    logo: fontawesome/solid/w
+    logo: octicons/zap-24
+  features:
+    - content.code.copy
+    - navigation.expand
+    - navigation.footer  
 
   
 
@@ -39,6 +44,8 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
+  - pymdownx.arithmatex:
+      generic: true
   - pymdownx.tabbed:
       alternate_style: true
   - admonition
@@ -53,10 +60,38 @@ markdown_extensions:
 
 nav:
   - 简介: index.md
-  - 基础:
-    - 下载编译: xd/pic.md
-  - 进阶:
-    - 整体流程: chart1/tabs.md
+  - 实验设置:
+    - 探测器阵列设置: introduction/tele.md
+  - 分析代码结构:
+    - forgerib: code/forgerib/forgerib.md
+  - T0探测器阵列:
+    - T0D1分析: T0/t0d1.md
 
-# extra:
-  # homepage: https://example.com
+# 新增 plugins 块来优化搜索
+plugins:
+  - search:
+      separator: '[\s\-\.]+'
+      suggestions: true      # <--- 启用搜索建议
+      highlight: true        # <--- 启用搜索词高亮
+      lang: zh
+      separator: '[\s\u200b\-]'  # 这一行让搜索可以更好地匹配词语[citation:1]
+      prebuild_index: true
+      # 通过设置最小长度来确保短词不被忽略
+      min_search_length: 2
+  
+  - git-revision-date-localized:  # <--- 新增：显示最后更新日期
+      type: date
+
+# 在 extra 中添加版本和生成器信息
+extra:
+  version:
+    provider: mike
+    default: latest
+    generator: false  # <--- 移除页脚的 "Made with Material for MkDocs" 信息
+
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/hjlfsj
+
+extra_javascript:
+  - https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js
