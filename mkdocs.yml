@@ -64,8 +64,8 @@ nav:
     - 探测器阵列设置: introduction/tele.md
   - 分析代码结构:
     - forgerib: code/forgerib/forgerib.md
-  - T0探测器阵列:
-    - T0D1分析: T0/t0d1.md
+  - T0初步分析:
+    - T0D1: T0/t0d1.md
 
 # 新增 plugins 块来优化搜索
 plugins:
