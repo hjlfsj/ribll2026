@@ -62,10 +62,13 @@ nav:
   - 简介: index.md
   - 实验设置:
     - 探测器阵列设置: introduction/tele.md
+    - 物理 run 细节: introduction/run_shift.md
   - 分析代码结构:
     - forgerib: code/forgerib/forgerib.md
   - T0初步分析:
-    - T0D1: T0/t0d1.md
+    - T0: T0/t0.md
+  
+  - DAILY RECORD: daily_record/daily_record.md
 
 # 新增 plugins 块来优化搜索
 plugins:
