@@ -65,10 +65,11 @@ nav:
     - 物理 run 细节: introduction/run_shift.md
   - 分析代码结构:
     - forgerib: code/forgerib/forgerib.md
+    - brill2: code/brill2/brill2.md
   - T0初步分析:
     - T0: T0/t0.md
   
-  - DAILY RECORD: daily_record/daily_record.md
+  # - DAILY RECORD: daily_record/daily_record.md
 
 # 新增 plugins 块来优化搜索
 plugins:
