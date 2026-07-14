@@ -69,7 +69,7 @@ nav:
   - T0初步分析:
     - T0: T0/t0.md
   
-  # - DAILY RECORD: daily_record/daily_record.md
+  - DAILY RECORD: daily_record/daily_record.md
 
 # 新增 plugins 块来优化搜索
 plugins:
