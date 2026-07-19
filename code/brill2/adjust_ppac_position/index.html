@@ -1,0 +1,1653 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://sitename.example/code/brill2/adjust_ppac_position/">
+      
+      
+        <link rel="prev" href="../match_dssd/">
+      
+      
+        <link rel="next" href="../../../T0/t0/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>调整 PPAC 位置 - RIBLL 2026</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+SC,+Merriweather+Sans:300,300i,400,400i,700,700i%7CFira+Code:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Noto Sans SC, Merriweather Sans";--md-code-font:"Fira Code"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="deep-orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ppac" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="RIBLL 2026" class="md-header__button md-logo" aria-label="RIBLL 2026" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.716 1.329a1.341 1.341 0 0 1 2.109 1.55L15.147 9h4.161c1.623 0 2.372 2.016 1.143 3.075L8.102 22.721a1.148 1.148 0 0 1-1.81-1.317L8.996 15H4.674c-1.619 0-2.37-2.008-1.148-3.07l12.19-10.6Zm.452 1.595L4.51 13.061a.25.25 0 0 0 .164.439h5.45a.75.75 0 0 1 .692 1.041l-2.559 6.066 11.215-9.668a.25.25 0 0 0-.164-.439H14a.75.75 0 0 1-.687-1.05Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            RIBLL 2026
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              调整 PPAC 位置
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="deep-orange"  aria-label="Light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="green" data-md-color-accent="deep-purple"  aria-label="Dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="RIBLL 2026" class="md-nav__button md-logo" aria-label="RIBLL 2026" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.716 1.329a1.341 1.341 0 0 1 2.109 1.55L15.147 9h4.161c1.623 0 2.372 2.016 1.143 3.075L8.102 22.721a1.148 1.148 0 0 1-1.81-1.317L8.996 15H4.674c-1.619 0-2.37-2.008-1.148-3.07l12.19-10.6Zm.452 1.595L4.51 13.061a.25.25 0 0 0 .164.439h5.45a.75.75 0 0 1 .692 1.041l-2.559 6.066 11.215-9.668a.25.25 0 0 0-.164-.439H14a.75.75 0 0 1-.687-1.05Z"/></svg>
+
+    </a>
+    RIBLL 2026
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    简介
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    实验设置
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    实验设置
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../introduction/tele/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    探测器阵列设置
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../introduction/run_shift/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    物理 run 细节
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    分析代码结构
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    分析代码结构
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../forgerib/forgerib/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    forgerib
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    brill2
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    brill2
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../match_dssd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    配对算法
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    调整 PPAC 位置
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    调整 PPAC 位置
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        概述
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        物理背景
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        算法流程
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="算法流程">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stage-1-05-mm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stage 1: 粗网格搜索 (0.5 mm 步长)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stage-2-01-mm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stage 2: 细网格搜索 (0.1 mm 步长)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stage-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stage 3: 抛物线插值（亚网格精度）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stage-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stage 4: 不确定性估计
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3ppac" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3点PPAC 系统的简并性问题
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3点PPAC 系统的简并性问题">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        数学根源
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        为什么普通网格算法失效
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        正则化方案
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        测试结果
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="测试结果">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        测试条件
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#y-59" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Y 方向结果（改善显著，~59%）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#x-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        X 方向结果（改善较小，~4%）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        结果解读
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        程序用法
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        参考文献
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    T0初步分析
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    T0初步分析
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../T0/t0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    T0
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../daily_record/daily_record/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DAILY RECORD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        概述
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        物理背景
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        算法流程
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="算法流程">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stage-1-05-mm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stage 1: 粗网格搜索 (0.5 mm 步长)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stage-2-01-mm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stage 2: 细网格搜索 (0.1 mm 步长)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stage-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stage 3: 抛物线插值（亚网格精度）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stage-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stage 4: 不确定性估计
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3ppac" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3点PPAC 系统的简并性问题
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3点PPAC 系统的简并性问题">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        数学根源
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        为什么普通网格算法失效
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        正则化方案
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        测试结果
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="测试结果">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        测试条件
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#y-59" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Y 方向结果（改善显著，~59%）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#x-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        X 方向结果（改善较小，~4%）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        结果解读
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        程序用法
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        参考文献
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="ppac">PPAC 位置矫正算法</h1>
+<h2 id="_1">概述</h2>
+<p><code>adjust_ppac_position</code> 程序通过最小化 PPAC 径迹拟合残差，自动确定 PPAC2 和 PPAC3 相对于 PPAC1 的位置偏移量。该程序采用四阶段精化算法，并引入正则化项解决 3点PPAC 系统的固有数学简并性。</p>
+<h2 id="_2">物理背景</h2>
+<p>PPAC 探测器系统由三个 PPAC 组成（PPAC1、PPAC2、PPAC3），粒子依次穿过它们。理想情况下，三点应在一条直线上。但由于机械安装误差，PPAC2 和 PPAC3 的位置可能存在偏移量 (dx2, dx3) 和 (dy2, dy3)。</p>
+<p>对每个有效事件（<code>x_used_ppac == 7</code> 或 <code>y_used_ppac == 7</code>），有三个测量点 (z_i, pos_i) 需要拟合一条直线 <code>pos = a + b*z</code>。拟合残差为：</p>
+<div class="arithmatex">\[R_i(d_2, d_3) = \min_{a,b} \sum_{k=1}^3 \left(pos_k + d_k - (a + b \cdot z_k)\right)^2\]</div>
+<p>其中 <span class="arithmatex">\(d_1 = 0\)</span>（PPAC1 作为参考点），<span class="arithmatex">\(d_2, d_3\)</span> 为 PPAC2 和 PPAC3 的位置偏移。</p>
+<h2 id="_3">算法流程</h2>
+<h3 id="stage-1-05-mm">Stage 1: 粗网格搜索 (0.5 mm 步长)</h3>
+<p>在搜索范围 <code>[-n, +n]</code> mm 内以 0.5 mm 步长进行二维网格扫描，找到使平均残差最小的 <code>(d2, d3)</code>。</p>
+<h3 id="stage-2-01-mm">Stage 2: 细网格搜索 (0.1 mm 步长)</h3>
+<p>以 Stage 1 结果为中心，在 ±0.5 mm 范围内以 0.1 mm 步长进行精化搜索。</p>
+<h3 id="stage-3">Stage 3: 抛物线插值（亚网格精度）</h3>
+<p>在细网格最优解附近取 9 个点，拟合二次曲面：</p>
+<div class="arithmatex">\[R(d_2, d_3) = A d_2^2 + B d_3^2 + C d_2 d_3 + D d_2 + E d_3 + F\]</div>
+<p>解析求解二次曲面的极小值点，获得亚网格精度（&lt; 0.1 mm）的最优解。</p>
+<h3 id="stage-4">Stage 4: 不确定性估计</h3>
+<p>以 0.5 mm 步长在最优解附近重新计算 Hessian 矩阵，通过以下公式估计参数的不确定性：</p>
+<div class="arithmatex">\[\sigma_{d_2} = \sqrt{\frac{R_{\text{best}}}{N} \cdot \frac{2B}{\det H}}, \quad \sigma_{d_3} = \sqrt{\frac{R_{\text{best}}}{N} \cdot \frac{2A}{\det H}}\]</div>
+<p>其中 <span class="arithmatex">\(H = \begin{bmatrix} 2A &amp; C \\ C &amp; 2B \end{bmatrix}\)</span> 为 Hessian 矩阵，<span class="arithmatex">\(\det H = 4AB - C^2\)</span>。</p>
+<h2 id="3ppac">3点PPAC 系统的简并性问题</h2>
+<h3 id="_4">数学根源</h3>
+<p>用 3 个点拟合一条直线（2 个参数：截距和斜率），系统的自由度为 1。PPAC2 和 PPAC3 的偏移不是独立确定的：存在一个<strong>简并方向</strong>，沿着该方向移动 <code>(d2, d3)</code> 不会改变拟合残差。</p>
+<p>对于理想情况（<span class="arithmatex">\(z_1 = -L, z_2 = 0, z_3 = L\)</span>），Hessian 矩阵为：</p>
+<div class="arithmatex">\[H = \begin{bmatrix} 4/3 &amp; -2/3 \\ -2/3 &amp; 1/3 \end{bmatrix}\]</div>
+<p>其行列式 <span class="arithmatex">\(\det H = 0\)</span>，零空间为 <span class="arithmatex">\([1, 2]^T\)</span>。这意味着：</p>
+<div class="arithmatex">\[R(d_2 + t, d_3 + 2t) = R(d_2, d_3) \quad \forall t\]</div>
+<p>残差曲面是一个平坦的"谷底"，而非一个孤立的极小值点。</p>
+<h3 id="_5">为什么普通网格算法失效</h3>
+<p>普通网格算法（无正则化）只在谷底找到一个<strong>任意点</strong>，该点的具体位置取决于：</p>
+<ol>
+<li><strong>统计涨落</strong>：不同 run 的事例统计不同，谷底的微小扰动会导致最优解在谷底滑动</li>
+<li><strong>网格离散化</strong>：有限步长的网格搜索会在谷底任意位置停止</li>
+<li><strong>初始条件敏感</strong>：搜索起点和步长的微小变化导致完全不同的结果</li>
+</ol>
+<p><strong>实验验证</strong>：以 run 60 和 run 57 的 Y 方向为例：</p>
+<table>
+<thead>
+<tr>
+<th>算法</th>
+<th>run 60</th>
+<th>run 57</th>
+<th>差异</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>无正则化</td>
+<td>dy2=3.1, dy3=4.9</td>
+<td>dy2=-1.4, dy3=-4.0</td>
+<td>~4.5 mm</td>
+</tr>
+<tr>
+<td>有正则化</td>
+<td>dy2=0.49, dy3=-0.25</td>
+<td>dy2=0.49, dy3=-0.24</td>
+<td>~0.01 mm</td>
+</tr>
+</tbody>
+</table>
+<p>无正则化结果的差值 (4.5, 8.9) ≈ 4.5 × (1, 2)，恰好沿着简并方向，验证了上述分析。</p>
+<h3 id="_6">正则化方案</h3>
+<p>在残差函数中加入一个小的惩罚项，偏好接近原点的解：</p>
+<div class="arithmatex">\[R_{\text{reg}}(d_2, d_3) = R(d_2, d_3) + \lambda \cdot (d_2^2 + d_3^2)\]</div>
+<p>其中 <span class="arithmatex">\(\lambda = R_{\text{baseline}} / (100 \cdot n^2)\)</span>。该惩罚项在搜索范围边缘（±n mm）处贡献约 1% 的基线残差，足够打破简并性，同时不会显著偏置良好确定的组合。</p>
+<p>正则化等效于：在平坦的谷底中，选择距离原点（即假设 PPAC 近似对齐）最近的解。这是最符合物理直觉的选择。</p>
+<h2 id="_7">测试结果</h2>
+<h3 id="_8">测试条件</h3>
+<p>对 t1 trigger 的 run 57-67（run 63 无数据）进行测试，搜索范围 n=5 mm。</p>
+<h3 id="y-59">Y 方向结果（改善显著，~59%）</h3>
+<table>
+<thead>
+<tr>
+<th>Run</th>
+<th>dy2 (mm)</th>
+<th>dy3 (mm)</th>
+<th>基线残差</th>
+<th>最优残差</th>
+<th>改善率</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>57</td>
+<td>0.489</td>
+<td>-0.245</td>
+<td>0.398</td>
+<td>0.148</td>
+<td>62.7%</td>
+</tr>
+<tr>
+<td>58</td>
+<td>0.490</td>
+<td>-0.245</td>
+<td>0.404</td>
+<td>0.154</td>
+<td>61.8%</td>
+</tr>
+<tr>
+<td>59</td>
+<td>0.489</td>
+<td>-0.245</td>
+<td>0.425</td>
+<td>0.175</td>
+<td>58.8%</td>
+</tr>
+<tr>
+<td>60</td>
+<td>0.493</td>
+<td>-0.246</td>
+<td>0.413</td>
+<td>0.160</td>
+<td>61.3%</td>
+</tr>
+<tr>
+<td>61</td>
+<td>0.491</td>
+<td>-0.245</td>
+<td>0.395</td>
+<td>0.145</td>
+<td>63.4%</td>
+</tr>
+<tr>
+<td>62</td>
+<td>0.491</td>
+<td>-0.246</td>
+<td>0.451</td>
+<td>0.199</td>
+<td>55.8%</td>
+</tr>
+<tr>
+<td>64</td>
+<td>0.504</td>
+<td>-0.252</td>
+<td>0.465</td>
+<td>0.201</td>
+<td>56.9%</td>
+</tr>
+<tr>
+<td>65</td>
+<td>0.494</td>
+<td>-0.247</td>
+<td>0.435</td>
+<td>0.180</td>
+<td>58.6%</td>
+</tr>
+<tr>
+<td>66</td>
+<td>0.489</td>
+<td>-0.245</td>
+<td>0.436</td>
+<td>0.187</td>
+<td>57.2%</td>
+</tr>
+<tr>
+<td>67</td>
+<td>0.485</td>
+<td>-0.243</td>
+<td>0.451</td>
+<td>0.206</td>
+<td>54.4%</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Y 方向平均值</strong>：
+- dy2 = <strong>0.491 ± 0.005 mm</strong>
+- dy3 = <strong>-0.246 ± 0.002 mm</strong>
+- 平均改善率：<strong>59.1%</strong></p>
+<h3 id="x-4">X 方向结果（改善较小，~4%）</h3>
+<table>
+<thead>
+<tr>
+<th>Run</th>
+<th>dx2 (mm)</th>
+<th>dx3 (mm)</th>
+<th>基线残差</th>
+<th>最优残差</th>
+<th>改善率</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>57</td>
+<td>-0.154</td>
+<td>0.077</td>
+<td>0.508</td>
+<td>0.484</td>
+<td>4.9%</td>
+</tr>
+<tr>
+<td>58</td>
+<td>-0.159</td>
+<td>0.080</td>
+<td>0.557</td>
+<td>0.531</td>
+<td>4.7%</td>
+</tr>
+<tr>
+<td>59</td>
+<td>-0.159</td>
+<td>0.079</td>
+<td>0.585</td>
+<td>0.558</td>
+<td>4.5%</td>
+</tr>
+<tr>
+<td>60</td>
+<td>-0.139</td>
+<td>0.070</td>
+<td>0.486</td>
+<td>0.466</td>
+<td>4.2%</td>
+</tr>
+<tr>
+<td>61</td>
+<td>-0.151</td>
+<td>0.075</td>
+<td>0.480</td>
+<td>0.457</td>
+<td>4.9%</td>
+</tr>
+<tr>
+<td>62</td>
+<td>-0.153</td>
+<td>0.077</td>
+<td>0.650</td>
+<td>0.626</td>
+<td>3.8%</td>
+</tr>
+<tr>
+<td>64</td>
+<td>-0.159</td>
+<td>0.079</td>
+<td>0.870</td>
+<td>0.843</td>
+<td>3.0%</td>
+</tr>
+<tr>
+<td>65</td>
+<td>-0.145</td>
+<td>0.073</td>
+<td>0.677</td>
+<td>0.655</td>
+<td>3.2%</td>
+</tr>
+<tr>
+<td>66</td>
+<td>-0.166</td>
+<td>0.083</td>
+<td>0.694</td>
+<td>0.666</td>
+<td>4.1%</td>
+</tr>
+<tr>
+<td>67</td>
+<td>-0.175</td>
+<td>0.088</td>
+<td>0.924</td>
+<td>0.892</td>
+<td>3.5%</td>
+</tr>
+</tbody>
+</table>
+<p><strong>X 方向平均值</strong>：
+- dx2 = <strong>-0.156 ± 0.010 mm</strong>
+- dx3 = <strong>0.078 ± 0.005 mm</strong>
+- 平均改善率：<strong>4.1%</strong></p>
+<h3 id="_9">结果解读</h3>
+<ol>
+<li>
+<p><strong>Y 方向</strong>：偏移量约 0.5 mm，残差改善 ~59%，说明 Y 方向存在显著的、物理上真实的 PPAC 位置偏移。各 run 结果高度一致（标准差 &lt; 0.01 mm）。</p>
+</li>
+<li>
+<p><strong>X 方向</strong>：偏移量约 0.15 mm，残差改善仅 ~4%，说明 X 方向偏移很小，残差曲面近乎平坦。X 方向的结果更多依赖于正则化而非数据本身，不确定性较大。</p>
+</li>
+<li>
+<p><strong>跨 run 一致性</strong>：正则化后各 run 结果高度一致，验证了算法的有效性。</p>
+</li>
+</ol>
+<h2 id="_10">程序用法</h2>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>./build/bin/adjust_ppac_position<span class="w"> </span>-r<span class="w"> </span>&lt;run&gt;<span class="w"> </span><span class="o">[</span>-t<span class="w"> </span>&lt;trigger&gt;<span class="o">]</span><span class="w"> </span><span class="o">[</span>-n<span class="w"> </span>&lt;half_size&gt;<span class="o">]</span>
+</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>说明</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-r, --run</code></td>
+<td>Run 号</td>
+<td>必填</td>
+</tr>
+<tr>
+<td><code>-t, --trigger</code></td>
+<td>触发类型：<code>main</code> 或 <code>t1</code></td>
+<td><code>main</code></td>
+</tr>
+<tr>
+<td><code>-n</code></td>
+<td>搜索范围半宽 (mm)</td>
+<td>5</td>
+</tr>
+</tbody>
+</table>
+<p>输出文件保存至 <code>/data/disk1/ribll2026_www_data/track/ppac_offset_&lt;trigger&gt;_&lt;run&gt;.txt</code>。</p>
+<h2 id="_11">参考文献</h2>
+<p>该算法基于以下物理原理：
+- 最小二乘直线拟合的残差最小化
+- Tikhonov 正则化（L2 正则化）处理不适定问题
+- 有限差分法估计 Hessian 矩阵和参数不确定性</p>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="最后更新">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年7月19日 12:06:25 UTC">2026年7月19日</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="../match_dssd/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 配对算法">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                配对算法
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../../T0/t0/" class="md-footer__link md-footer__link--next" aria-label="下一页: T0">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                T0
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/hjlfsj" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["content.code.copy", "navigation.expand", "navigation.footer"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": {"default": "latest", "generator": false, "provider": "mike"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
