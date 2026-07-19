@@ -3,7 +3,6 @@
 !!! warning
     Situations don’t consider: two adjacent events to one adjacent event and more complex cases
 
-# DSSD 探测器前端-后端条带配对算法
 
 ## 1. 总体流程
 

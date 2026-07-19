@@ -65,7 +65,9 @@ nav:
     - 物理 run 细节: introduction/run_shift.md
   - 分析代码结构:
     - forgerib: code/forgerib/forgerib.md
-    - brill2: code/brill2/brill2.md
+    - brill2: 
+      - 配对算法: code/brill2/match_dssd.md
+      - 调整 PPAC 位置: code/brill2/adjust_ppac_position.md
   - T0初步分析:
     - T0: T0/t0.md
   
